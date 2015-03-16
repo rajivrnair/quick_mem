@@ -1,0 +1,15 @@
+{
+  "folders":
+  [
+    {
+      "name": "Quick Mem",
+      "path": ".",
+      "folder_exclude_patterns": [ "coverage", "log", "pkg", "tmp", ".bundle", "vendor", "bin" ]
+    }
+  ],
+  "settings":
+  {
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true
+  }
+}

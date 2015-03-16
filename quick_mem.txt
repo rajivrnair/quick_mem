@@ -1,0 +1,25 @@
+Total Heap size/ Heap size used / % used / % free
+Total number of objects
+Total Allocated slots / slots used
+
+RUBY_GC_MALLOC_LIMIT
+RUBY_GC_HEAP_INIT_SLOTS
+RUBY_GC_HEAP_OLDOBJECT_LIMIT_FACTOR
+RUBY_HEAP_MIN_SLOTS
+RUBY_HEAP_SLOTS_INCREMENT
+RUBY_HEAP_SLOTS_GROWTH_FACTOR
+RUBY_HEAP_FREE_MIN
+
+
+GC.allocated_size
+GC.num_allocations
+
+ObjectSpace.live_objects
+ObjectSpace.allocated_objects
+
+Slot Size: GC::INTERNAL_CONSTANTS[:RVALUE_SIZE]
+Slots per page: GC::INTERNAL_CONSTANTS[:HEAP_OBJ_LIMIT]
+
+GC.stat[:heap_length] - total pages allocated.
+GC.stat[:heap_used] - total pages used.
+GC.stat[:heap_increment]
