@@ -42,15 +42,13 @@ module QuickMem
         }
       }
 
-      # let(:gc_config) { { :major_gc_count => 4 } }
-
       before do
+        # assuming default values for
+        # GC::INTERNAL_CONSTANTS[:RVALUE_SIZE] = 40
+        # GC::INTERNAL_CONSTANTS[:HEAP_OBJ_LIMIT] = 408
+
         allow(GC).to receive(:stat) { mem_options }
       end
-
-      # it 'spits out the GC config' do
-      #   expect(subject).to eq(gc_config)
-      # end
 
       it 'spits out the number of major GCs' do
         expect(subject[:major_gc_count]).to eq(4)
@@ -64,21 +62,12 @@ module QuickMem
         expect(subject[:total_gc_count]).to eq(22)
       end
 
-    end
-
-    describe '#stats' do
-      subject { QuickMemory.stats }
-
-      it 'spits out the max heap size' do
+      it 'spits out the total heap allocated in bytes' do
+        expect(subject[:heap_allocated]).to eq(3867840)
       end
 
-      it 'spits out the used heap size' do
-      end
-
-      it 'spits out the free heap size' do
-      end
-
-      it 'spits out objects ordered by size' do
+      it 'spits out the heap used in bytes' do
+        expect(subject[:heap_used]).to eq(3688320)
       end
 
     end

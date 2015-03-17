@@ -1,6 +1,8 @@
 # QuickMem
 
-TODO: Write a gem description
+A simple gem to dump memory stats. Primarily written to tick off the "I wrote a gem" box.
+I'll probably improve it to be some kind of analyzer/profiler if time permits.
+Suggestions welcome!
 
 ## Installation
 
