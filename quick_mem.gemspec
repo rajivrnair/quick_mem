@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{A simple gem to dump memory stats}
   spec.homepage      = "https://github.com/rajivrnair/quick_mem"
   spec.license       = "MIT"
+  spec.post_install_message = "Live long and prosper!" # \\//,
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
