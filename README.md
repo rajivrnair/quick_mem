@@ -1,5 +1,7 @@
 # QuickMem
 
+[![Gem Version](https://badge.fury.io/rb/quick_mem.svg)](http://badge.fury.io/rb/quick_mem)
+
 A simple gem to dump memory stats. Primarily written to tick off the "I wrote a gem" box.
 I'll probably improve it to be some kind of analyzer/profiler if time permits.
 Suggestions welcome!
