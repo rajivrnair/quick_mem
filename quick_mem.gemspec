@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Rajiv Nair"]
   spec.email         = ["rajivrnair@gmail.com"]
   spec.summary       = %q{Quickly look at GC stats}
-  spec.description   = %q{TODO: Description}
+  spec.description   = %q{A simple gem to dump memory stats}
   spec.homepage      = "https://github.com/rajivrnair/quick_mem"
   spec.license       = "MIT"
 
