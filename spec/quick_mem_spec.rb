@@ -21,7 +21,7 @@ module QuickMem
         end
       end
 
-      it 'returns a hash of memory statistics' do
+      it 'returns a hash' do
         expect(subject).to be_a Hash
       end
 
@@ -31,6 +31,28 @@ module QuickMem
 
       it 'contains statistics about the current memory usage' do
         expect(subject[:total_gc_count]).to eql(20)
+      end
+    end
+
+    describe '#show_summary' do
+      subject { QuickMemory.show_summary }
+      let(:summary) { double('summary') }
+
+      before do
+        allow(QuickMem::Summary).to receive(:new) { summary }
+        allow(summary).to receive(:show) { { heap_used_pct: '50.55' } }
+      end
+
+      it 'returns a hash' do
+        expect(subject).to be_a Hash
+      end
+
+      it 'is not empty' do
+        expect(subject).not_to be_empty
+      end
+
+      it 'contains a summary about the current memory usage' do
+        expect(subject[:heap_used_pct]).to eql('50.55')
       end
     end
   end

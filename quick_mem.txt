@@ -22,12 +22,8 @@ GC.stat[:heap_used] - total pages used.
 GC.stat[:heap_increment]
 
 summary:
-Total Heap size: M
-Heap size used: M (% of total)
-Heap size free: M (% of total)
 Total number of objects on heap
 10 most space taking objects
-show bytes/mb/gb
 
 - show version and time in summary and config.
 - stats snapshots to text files.
