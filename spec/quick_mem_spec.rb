@@ -4,7 +4,7 @@ require 'quick_mem'
 
 module QuickMem
   describe QuickMemory do
-    let(:version) { '0.0.4' }
+    let(:version) { '0.0.5' }
     let(:time_now) { double('time') }
     let(:timestamp) { '30/03/2015 23:28:47' }
 

@@ -1,3 +1,4 @@
+require 'quick_mem/version'
 require 'quick_mem/memory_stats'
 require 'quick_mem/summary'
 require 'quick_mem/dumps'
