@@ -4,16 +4,15 @@ require 'quick_mem'
 
 module QuickMem
   describe QuickMemory do
-
     describe '#version' do
-    subject { QuickMemory.version }
+      subject { QuickMemory.version }
 
       it 'outputs the correct version number' do
         expect(subject).to eq '0.0.3'
       end
     end
 
-    let(:mem_options) {
+    let(:mem_options) do
       {
         count: 22,
         heap_eden_page_length: 226,
@@ -38,7 +37,7 @@ module QuickMem
         total_allocated_object: 524356,
         total_freed_object: 433064
       }
-    }
+    end
 
     before do
       # assuming default values for
@@ -70,13 +69,6 @@ module QuickMem
       it 'spits out the heap used in bytes' do
         expect(subject[:heap_used]).to eq(3688320)
       end
-
-    end
-
-    describe '#summary' do
-      subject { QuickMemory.summary }
-
-      it 'prints out a summary'
     end
   end
 end

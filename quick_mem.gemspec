@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = QuickMem::VERSION
   spec.authors       = ["Rajiv Nair"]
   spec.email         = ["rajivrnair@gmail.com"]
-  spec.summary       = %q{Quickly look at GC stats}
-  spec.description   = %q{A simple gem to dump memory stats}
+  spec.summary       = 'Quickly look at GC stats'
+  spec.description   = 'A simple gem to dump memory stats'
   spec.homepage      = "https://github.com/rajivrnair/quick_mem"
   spec.license       = "MIT"
   spec.post_install_message = "Live long and prosper!" # \\//,
@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~>3.1.0'
   spec.add_development_dependency 'rubocop', '~>0.29.1'
+  spec.add_development_dependency 'english', '~> 0.6.3'
 end
 
 # group :test do

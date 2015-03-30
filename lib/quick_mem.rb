@@ -10,7 +10,7 @@ module QuickMem
 
     def self.show_config
       gc_stat = GC.stat
-      config = Hash.new
+      config = {}
       gc_counts(config, gc_stat)
       heap_statistics(config, gc_stat)
       config

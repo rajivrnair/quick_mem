@@ -5,91 +5,16 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 2
-# Configuration parameters: AllowURI, URISchemes.
-Metrics/LineLength:
-  Max: 87
+AllCops:
+  Excludes:
+    - quick_mem.gemspec
+    - pkg/**
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/Blocks:
-  Enabled: false
-
-# Offense count: 2
-Style/ClassVars:
-  Enabled: false
-
-# Offense count: 4
 Style/Documentation:
   Enabled: false
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/EmptyLinesAroundClassBody:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyLiteral:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/HashSyntax:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/IndentationConsistency:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: Width.
-Style/IndentationWidth:
-  Enabled: false
-
-# Offense count: 12
-# Cop supports --auto-correct.
 Style/NumericLiterals:
   MinDigits: 9
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredDelimiters.
-Style/PercentLiteralDelimiters:
-  Enabled: false
-
-# Offense count: 2
-Style/RegexpLiteral:
-  MaxSlashes: 0
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/SpecialGlobalVars:
-  Enabled: false
-
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/StringLiterals:
-  Enabled: false
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/TrailingBlankLines:
-  Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/UnneededPercentQ:
-  Enabled: false
