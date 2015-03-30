@@ -17,4 +17,10 @@ Style/EmptyLinesAroundClassBody:
   Enabled: false
 
 Style/NumericLiterals:
-  MinDigits: 9
+  MinDigits: 10
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/AbcSize:
+  Max: 20
