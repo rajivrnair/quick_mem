@@ -55,5 +55,49 @@ module QuickMem
         expect(subject[:heap_used_pct]).to eql('50.55')
       end
     end
+
+    describe '#view_objects_by_size' do
+      subject { QuickMemory.view_objects_by_size }
+
+      before do
+        allow(QuickMem::Dumps).to receive(:top_allocated_objects) do
+          { Thread: 1049960, String: 2688465, Class: 976088 }
+        end
+      end
+
+      it 'returns a hash' do
+        expect(subject).to be_a Hash
+      end
+
+      it 'is not empty' do
+        expect(subject).not_to be_empty
+      end
+
+      it 'contains a map of classes to total size of all instances' do
+        expect(subject).to eql(String: 2688465, Thread: 1049960, Class: 976088)
+      end
+    end
+
+    describe '#view_objects_by_count' do
+      subject { QuickMemory.view_objects_by_count }
+
+      before do
+        allow(QuickMem::Dumps).to receive(:count_top_allocated_objects) do
+          { Thread: 104, String: 268, Class: 97 }
+        end
+      end
+
+      it 'returns a hash' do
+        expect(subject).to be_a Hash
+      end
+
+      it 'is not empty' do
+        expect(subject).not_to be_empty
+      end
+
+      it 'contains a map of classes to instance count' do
+        expect(subject).to eql(String: 268, Thread: 104, Class: 97)
+      end
+    end
   end
 end
