@@ -4,11 +4,20 @@ require 'quick_mem'
 
 module QuickMem
   describe QuickMemory do
+    let(:version) { '0.0.4' }
+    let(:time_now) { double('time') }
+    let(:timestamp) { '30/03/2015 23:28:47' }
+
+    before do
+      allow(Time).to receive(:now) { time_now }
+      allow(time_now).to receive(:strftime) { timestamp }
+    end
+
     describe '#version' do
       subject { QuickMemory.version }
 
       it 'outputs the correct version number' do
-        expect(subject).to eq '0.0.3'
+        expect(subject).to eq version
       end
     end
 
@@ -32,6 +41,14 @@ module QuickMem
       it 'contains statistics about the current memory usage' do
         expect(subject[:total_gc_count]).to eql(20)
       end
+
+      it 'contains the version' do
+        expect(subject[:version]).to eq version
+      end
+
+      it 'contains the timestamp' do
+        expect(subject[:timestamp]).to eq timestamp
+      end
     end
 
     describe '#show_summary' do
@@ -54,6 +71,14 @@ module QuickMem
       it 'contains a summary about the current memory usage' do
         expect(subject[:heap_used_pct]).to eql('50.55')
       end
+
+      it 'contains the version' do
+        expect(subject[:version]).to eq version
+      end
+
+      it 'contains the timestamp' do
+        expect(subject[:timestamp]).to eq timestamp
+      end
     end
 
     describe '#view_objects_by_size' do
@@ -74,7 +99,15 @@ module QuickMem
       end
 
       it 'contains a map of classes to total size of all instances' do
-        expect(subject).to eql(String: 2688465, Thread: 1049960, Class: 976088)
+        expect(subject[:objects_by_size]).to eql(String: 2688465, Thread: 1049960, Class: 976088)
+      end
+
+      it 'contains the version' do
+        expect(subject[:version]).to eq version
+      end
+
+      it 'contains the timestamp' do
+        expect(subject[:timestamp]).to eq timestamp
       end
     end
 
@@ -96,7 +129,15 @@ module QuickMem
       end
 
       it 'contains a map of classes to instance count' do
-        expect(subject).to eql(String: 268, Thread: 104, Class: 97)
+        expect(subject[:objects_by_count]).to eql(String: 268, Thread: 104, Class: 97)
+      end
+
+      it 'contains the version' do
+        expect(subject[:version]).to eq version
+      end
+
+      it 'contains the timestamp' do
+        expect(subject[:timestamp]).to eq timestamp
       end
     end
   end

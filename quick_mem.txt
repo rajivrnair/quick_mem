@@ -22,9 +22,6 @@ GC.stat[:heap_used] - total pages used.
 GC.stat[:heap_increment]
 
 summary:
-Total number of objects on heap
-10 most space taking objects
-
 - show version and time in summary and config.
 - stats snapshots to text files.
 - graph to plot memory usage.
