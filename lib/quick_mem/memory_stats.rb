@@ -1,29 +1,38 @@
-require 'quick_mem/version'
 require 'quick_mem/gc_constants'
 
 module QuickMem
   class MemoryStats
 
     def self.show
-      gc_stat = GC.stat
-      config = {}
-      gc_counts(config, gc_stat)
-      heap_statistics(config, gc_stat)
-      config
+      raw_data = GC.stat
+      stats = {}
+      gc_counts(stats, raw_data)
+      heap_statistics(stats, raw_data)
+      stats
     end
 
     class << self
       private
 
-      def heap_statistics(config, gc_stat)
-        config[:heap_allocated] = gc_stat[:heap_length] * page_size
-        config[:heap_used] = gc_stat[:heap_eden_page_length] * page_size
+      def heap_statistics(stats, raw_data)
+        stats[:heap_reserved] = raw_data[:heap_length] * page_size
+        stats[:heap_allocated] = total_slots(raw_data) * slot_size
+        stats[:heap_used] = used_slots(raw_data) * slot_size
+        stats[:heap_free] = raw_data[:heap_free_slot] * slot_size
       end
 
-      def gc_counts(config, gc_stat)
-        config[:major_gc_count] = gc_stat[:major_gc_count]
-        config[:minor_gc_count] = gc_stat[:minor_gc_count]
-        config[:total_gc_count] = gc_stat[:count]
+      def gc_counts(stats, raw_data)
+        stats[:major_gc_count] = raw_data[:major_gc_count]
+        stats[:minor_gc_count] = raw_data[:minor_gc_count]
+        stats[:total_gc_count] = raw_data[:count]
+      end
+
+      def total_slots(raw_data)
+        used_slots(raw_data) + raw_data[:heap_free_slot]
+      end
+
+      def used_slots(raw_data)
+        raw_data[:heap_live_slot] + raw_data[:heap_final_slot]
       end
 
       def page_size
