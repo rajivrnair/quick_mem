@@ -24,7 +24,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'quick_mem'
+
+QuickMem::QuickMemory.show_config
+```
 
 ## Contributing
 
