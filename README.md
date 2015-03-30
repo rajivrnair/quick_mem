@@ -27,7 +27,17 @@ Or install it yourself as:
 ```ruby
 require 'quick_mem'
 
-QuickMem::QuickMemory.show_config
+# show memory stats (more-or-less raw form)
+QuickMem::QuickMemory.show_stats
+
+# show memory summary (heap total,used,free mem in MB and percentage)
+QuickMem::QuickMemory.show_summary
+
+# view top 50 objects by descending order of size
+QuickMem::QuickMemory.view_objects_by_size
+
+# view top 50 objects by descending order of instance count
+QuickMem::QuickMemory.view_objects_by_count
 ```
 
 ## Contributing

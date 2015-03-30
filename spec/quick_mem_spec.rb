@@ -21,8 +21,8 @@ module QuickMem
       end
     end
 
-    describe '#show_config' do
-      subject { QuickMemory.show_config }
+    describe '#show_stats' do
+      subject { QuickMemory.show_stats }
 
       before do
         allow(QuickMem::MemoryStats).to receive(:show) do

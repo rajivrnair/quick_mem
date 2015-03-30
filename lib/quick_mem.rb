@@ -9,12 +9,12 @@ module QuickMem
       QuickMem::VERSION
     end
 
-    def self.show_config
+    def self.show_stats
       add_meta_info(QuickMem::MemoryStats.show)
     end
 
     def self.show_summary
-      add_meta_info(QuickMem::Summary.new(show_config).show)
+      add_meta_info(QuickMem::Summary.new(show_stats).show)
     end
 
     def self.view_objects_by_size
