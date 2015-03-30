@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-require 'quick_mem/quick_mem'
+require 'quick_mem'
 
 module QuickMem
   describe QuickMemory do
@@ -9,7 +9,7 @@ module QuickMem
     subject { QuickMemory.version }
 
       it 'outputs the correct version number' do
-        expect(subject).to eq '0.0.1'
+        expect(subject).to eq '0.0.3'
       end
     end
 
